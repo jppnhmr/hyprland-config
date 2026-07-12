@@ -1,0 +1,63 @@
+$waybar_config 	= ~/.config/waybar/waybar-config/config
+$waybar_style 	= ~/.config/waybar/waybar-config/style.css
+
+# █▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █░█ █▀█
+# ▄█ ░█░ █▀█ █▀▄ ░█░ █▄█ █▀▀
+
+exec-once 		= awww-daemon --no-cache
+exec-once		= ~/.config/hypr/my_conf/random-wallpaper.sh
+exec-once 		= waybar --config $waybar_config --style $waybar_style &
+exec-once 		= /usr/lib/polkit-kde-authentication-agent-1
+exec-once 		= eval $(ssh-agent)
+exec-once 		= hyprpm reload -n
+
+exec-once = nemo --daemon
+
+env = XCURSOR_SIZE,				24
+env	= HYPRCURSOR_SIZE,			23
+env = LIBVA_DRIVER_NAME,		nvidia
+env = XDG_SESSION_TYPE, 		wayland
+env = GBM_BACKEND, 				nvidia-drm
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = WLR_NO_HARDWARE_CURSORS, 	1
+
+cursor {
+	no_hardware_cursors = true
+}
+
+monitor=DP-1, 1920x1080@143.99, 0x0,	1
+monitor=DP-2, 1920x1080@60, 	1920x0, 1, transform, 3
+# CRT2 #monitor=HDMI-A-1, 720x576@50, 1920x0, 1
+
+#exec-once 		= hyprctl dispatch moveworkspacetomonitor 2 DP-2
+#exec-once		= hyprctl dispatch moveworkspacetomonitor 1 DP-1
+workspace=1,monitor:DP-1 
+workspace=2,monitor:DP-2
+
+# █ █▄░█ █▀█ █░█ ▀█▀
+# █ █░▀█ █▀▀ █▄█ ░█░
+input {
+	kb_layout = us
+	kb_variant =
+    kb_model =
+    kb_options =
+    kb_rules =
+
+    follow_mouse = 1
+
+    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+
+    touchpad {
+        natural_scroll = false
+    }
+}
+
+# See https://wiki.hypr.land/Configuring/Gestures
+gesture = 3, horizontal, workspace
+
+# Example per-device config
+# See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
+device {
+    name = epic-mouse-v1
+    sensitivity = -0.5
+}
