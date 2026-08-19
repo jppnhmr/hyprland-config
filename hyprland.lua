@@ -1,0 +1,5 @@
+require("startup")
+require("decorations")
+require("devices")
+require("windowrules")
+require("keybinds")
