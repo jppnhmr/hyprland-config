@@ -1,5 +1,0 @@
-   theme {
-       color_scheme = /home/sandman/.local/share/color-schemes/HackerGreen.colors
-       style = Breeze
-       icon_theme = Papirus-Dark
-   }
