@@ -104,7 +104,7 @@ hl.bind(mod .. " + CTRL + P", hl.dsp.exec_cmd(
     [[/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy]]))
 
 -- GAMMA --
-local gamma = "gammastep -l 51.45:-2.59 -t "
+local gamma = "gammastep -l geoclue2 -t "
 hl.bind(mod .. " + CTRL + SHIFT + Z", hl.dsp.exec_cmd(gamma .. "6500:1500"))
 hl.bind(mod .. " + CTRL + SHIFT + X", hl.dsp.exec_cmd(gamma .. "10500:2500"))
 hl.bind(mod .. " + CTRL + SHIFT + C", hl.dsp.exec_cmd(gamma .. "1500:8500"))
