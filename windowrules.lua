@@ -28,3 +28,12 @@ hl.window_rule({
     match = { title = "startup-fire" },
     float = true, monitor = "0", size = "100% 50%", move = "0 50%",
 })
+
+hl.window_rule({
+	name = "suppress-terminal-maximize",
+	match = { class = "^kitty$" },
+	suppress_event = "maximize",
+})
+
+hl.env("STEAM_FORCE_DESKTOPUI_SCALING", "1.5")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "1.5")
